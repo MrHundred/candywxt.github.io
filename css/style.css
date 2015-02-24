@@ -1,0 +1,150 @@
+/*transfrom属性 向元素应用2D或3D的转换，该属性允许我们对元素进行旋转，缩放，移动或倾斜。
+transition属性 过渡属性 transition-property、transition-duration、transition-timing-function、transition-delay;
+box-sizing属性 允许以特定的方式定义匹配某个区域的特定元素
+            content-box border-box inherit
+border-radius属性 定义圆角的属性
+*/
+*{margin: 0;
+padding:0;}
+body{background: #333;}
+.box{width:800px;
+     height: 280px;
+     margin: 50px auto;
+    position: relative;}
+.box .link{
+    width:205px;
+    height: 280px;
+    float:left;
+    margin: 0 20px;
+}
+.link .icon{
+    display: inline-block;
+    width: 100%;
+    height: 190px;/*应该是放大之后的尺寸*/
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -ms-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+    transition: 1s ease-out;
+}
+.link-miss .icon{
+    background:url("../images/icon1.png")no-repeat center;
+}
+.link-play .icon{
+    background:url("../images/icon1.png")no-repeat center;
+}
+.link-touch .icon{
+    background:url("../images/icon1.png")no-repeat center;
+}
+.link .icon:hover{transform:rotate(360deg) scale(1.2);
+                   -ms-transform:rotate(360deg) scale(1.2);
+                   -moz-transform:rotate(360deg) scale(1.2);
+                   -webkit-transform:rotate(360deg) scale(1.2);
+                   }
+.btn{
+    display: block;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: #2dcb70;
+    font-family: Arial;
+    border: 2px solid rgba(255,255,255,0.8);
+    padding-left: 20px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -ms-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+}
+.btn:hover{border: 2px solid rgba(255,255,255,1);
+            background-position: 140px center;
+}
+.btn .line{display: block;
+            position: absolute;
+            background: none;
+            -webkit-transition: 0.2s ease;
+            -moz-transition: 0.2s ease;
+            -ms-transition: 0.2s ease;
+            -o-transition: 0.2s ease;
+            transition: 0.2s ease;}
+.btn:hover .line{background:rgba(255,255,255,0.8);}
+.btn .line-top{height: 2px;
+                 width:0;/**/
+                 left: -110%;
+                top:-2px;}
+.btn:hover .line-top{width:100%;
+                        left:-2px;}
+.btn  .line-right{height:0;
+                   width:2px;
+                   top:-110%;
+                   right:-2px;}
+.btn:hover .line-right{height: 100%;
+                            top:-2px;}
+.btn .line-bottom{height: 2px;
+                    width: 0;
+                    bottom: -2px;
+                    right: -110%; }
+.btn:hover .line-bottom{width: 100%;
+                            right: -2px;}
+.btn .line-left{width: 2px;
+                    height: 0px;
+                    left: -2px;
+                    bottom: -110%;}
+.btn:hover .line-left{height: 100%;
+                        bottom: -2px;}
+.tip {position: absolute;
+       padding: 0 14px;
+       height: 35px;
+       line-height: 35px;
+       background: #2dcb70;
+       color: #fff;
+       font-size: 18px;
+       margin: 0 auto;
+       border-radius: 3px;
+       -ms-border-radius: 3px;
+       -moz-border-radius: 3px;
+       -o-border-radius: 3px;
+       -webkit-border-radius: 3px;
+       top:100px;
+       opacity:0;/*透明度*/
+       }
+.tip em{font-style: normal;}
+.tip span{display: block;
+           width: 0;
+           height: 0;
+           overflow: hidden;
+           border:7px solid transparent;
+           border-top-color: #2dcb70;
+           position: absolute;
+           top: 35px;
+           left: 50%;
+           margin-left: -3px;}
+.login{padding:10px;margin:0 auto;background-color:#e8f3f9;width:220px;}
+.login input{height:24px;margin:10px 10px;padding:10px;height:4px;color:#a8a8a8;}
+.login p{font-size:12px;margin-left:27px;float:left;}
+.login a,span{text-decoration:none;display:block;}
+.login .forget{font-size:12px;float:right;margin-right:10px;}
+.log{background:url(http://img.mukewang.com/539a972b00013e9102280177.jpg) no-repeat;width:191px;height:38px;margin-top:40px;margin-left:15px;margin-bottom:20px;}
+.login .line{border-bottom:1px solid #d4d5d7;}
+.ins{background:url(http://img.mukewang.com/539a972b00013e9102280177.jpg)0 -38px; no-repeat;width:191px;height:38px;margin-top:20px;margin-left:15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+

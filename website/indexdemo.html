@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <script src="js/setHomeSetFav.js" type="text/javascript" charset="gb2312"></script>
+    <script src="js/myfocus-2.0.1.min.js" type="text/javascript"></script>
+    <script src="js/mf-pattern/mF_fancy.js" type="text/javascript"></script>
+    <link href="js/mf-pattern/mF_fancy.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        myFocus.set({
+            id:'picBox'
+        })
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="top_content">
+            <ul>
+                <li><a href="#">联系慕课</a></li>
+                <li><a href="#" onclick="AddFavorite(window.location,document.title)">加入收藏</a></li>
+                <li><a href="#" onclick="SetHome(window.location)">设为首页</a></li>
+            </ul>
+        </div>
+    </div><!--top结束-->
+    <div class="warp">
+        <div class="logo">
+            <div class="logo_left">
+                <img src="images/logo.jpg" />
+            </div>
+            <div class="logo_right">
+                <img src="images/tel.jpg"/>24小时服务热线<span class="tel">123-456-7890</span>
+            </div>
+        </div><!--logo结束-->
+        <div class="nav">
+            <div class="nav_left"></div>
+            <div class="nav_middle">
+                <div class="nav_middle_left">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="list.html">关于慕课</a></li>
+                        <li><a href="list.html">新闻动态</a></li>
+                        <li><a href="list.html">课程中心</a></li>
+                        <li><a href="list.html">在线课程</a></li>
+                        <li><a href="list.html">人才招聘</a></li>
+                    </ul>
+                </div><!--nav_middle_left结束-->
+                <div class="nav_middle_right">
+                    <form action="" method="post">
+                        <input type="text"  class="serch_text"/>
+                    </form>
+                </div><!--nav_middle_right结束-->
+            </div><!--nav_middle结束-->
+            <div class="nav_right"></div><!--nav_left结束-->
+        </div><!--nav结束-->
+        <div class="ad" id="picBox">
+            <div class="loading"><img src="images/loading.gif"/></div>
+            <div class="pic">
+            <ul>
+                <li><img src="images/ad2.jpg" alt=""/></li>
+                <li><img src="images/ad3.jpg" alt=""/></li>
+                <li><img src="images/ad4.jpg" alt=""/></li>
+            </ul>
+            </div>
+        </div><!--ad结束-->
+        <div class="main">
+            <div class="news">
+                <div class="title">
+                    <h2 class="title_left">新闻中心</h2><span class="title_right"><a href="news.html"> More&gt;&gt;</a></span>
+                </div><!--title结束-->
+                <div class="pic_news">
+                    <img src="images/news.jpg" />
+                    <h2><a href="news.html"> 慕女神喊你来表白</a></h2>
+                    <p>活动时间：2015年2月22日<br>
+                    获奖公布时间：5月26日<br>
+                        <a href="news.html">Learn More>></a></p>
+                </div><!--pic_news结束-->
+                <div class="news_list">
+                    <ul>
+                        <li><a href="">【慕课访谈】慕女神为你揭秘在路上</a><span>2015-2-22</span></li>
+                        <li><a href="">【慕课访谈】慕女神为你揭秘在路上</a><span>2015-2-22</span></li>
+                        <li><a href="">【慕课访谈】慕女神为你揭秘在路上</a><span>2015-2-22</span></li>
+                        <li><a href="">【慕课访谈】慕女神为你揭秘在路上</a><span>2015-2-22</span></li>
+                    </ul>
+
+                </div><!--nes_list结束-->
+            </div><!--news结束-->
+            <div class="course">
+                <div class="title">
+                    <h2 class="title_left">课程中心</h2><span class="title_right"><a>More>></a></span>
+                </div><!--title结束-->
+                <div class="course_pic">
+                    <img src="images/css.jpg">
+                    <h2><a href="#">CSS圆角进化论</a></h2>
+                    <p>myFocus库本身力求简洁干净，做到足够轻量级，不会随意为一个功能多加一行代码。当然它还有可以改善的地方，如果您发现任何bug或建议，欢迎联系我或到这里反馈，感谢您的支持。</p>
+                </div><!--course_pic结束-->
+                <div class="course_type">
+                    <ul>
+                        <li>课程列表</li>
+                        <li>课程列表</li>
+                        <li>课程列表</li>
+                        <li>课程列表</li>
+                    </ul>
+                </div><!--course_type结束-->
+            </div><!--course结束-->
+            <div class="sidebar">
+                <div class="video">
+                    <div class="title">
+                        <h2 class="title_left">媒体聚焦</h2>
+                    </div><!--title结束-->
+                    <div class="video_content">
+                        <embed src="http://player.youku.com/player.php/sid/XODkwNzg3MDky/v.swf" allowFullScreen="true" quality="high" width="220" height="140" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+                    </div><!--video_content结束-->
+                </div><!--video结束-->
+                <div class="sidebar_ad">
+                    <img src="images/app.jpg" />
+                </div><!--sidebar_ad结束-->
+            </div><!--sidebar结束-->
+        </div><!--main的结束-->
+    </div><!--wrap结束-->
+<div class="copyright">
+    <div class="copyright_content">
+        <ul>
+            <li><a href="#">关于</a>
+                <ul>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                </ul>
+            </li>
+            <li><a href="#">课程</a>
+                <ul>
+                    <li><a href="#">课程自列表</a></li>
+                    <li><a href="#">课程自列表</a></li>
+                    <li><a href="#">课程自列表</a></li>
+                    <li><a href="#">课程自列表</a></li>
+                </ul>
+            </li>
+            <li><a href="#">留言</a>
+                <ul>
+                    <li><a href="#">留言自列表</a></li>
+                    <li><a href="#">留言自列表</a></li>
+                    <li><a href="#">留言自列表</a></li>
+                    <li><a href="#">留言自列表</a></li>
+                </ul>
+            </li>
+            <li><a href="#">关注</a>
+                <ul>
+                    <li><a href="#">关注自列表</a></li>
+                    <li><a href="#">关注自列表</a></li>
+                    <li><a href="#">关注自列表</a></li>
+                    <li><a href="#">关注自列表</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img src="images/weixin.png" />微信</a>
+                <ul>
+                    <li><img src="images/qrcode.jpg" /></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!--copyright_content结束-->
+</div><!--copyright结束-->
+</body>
+</html>

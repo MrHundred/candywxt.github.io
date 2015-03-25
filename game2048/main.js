@@ -14,6 +14,9 @@ function newgame(){
     //随机出两个数字
     genrateOneNum();
     genrateOneNum();
+
+    score = 0;
+    $("#score").text(score);
 }
 
 function init() {
@@ -86,32 +89,38 @@ $(document).keydown(function (event){
     switch (event.keyCode){
         case 37://left
             if( moveLeft() ){//如果可以向左移，那么久添加一个新的数
-                genrateOneNum();//每一次添加新的数都有可能造成gameOver
-                isGameOver();
+                setTimeout("genrateOneNum()",210);
+                setTimeout("isGameOver()",300);
+                //每一次添加新的数都有可能造成gameOver
+
             }
             break;
         case 38://up
             if( moveUp ){
-                genrateOneNum();
-                isGameOver();
+                setTimeout("genrateOneNum()",210);
+                setTimeout("isGameOver()",300);
             }
             break;
         case 39://right
             if( moveRight() ){
-                genrateOneNum();
-                isGameOver();
+                setTimeout("genrateOneNum()",210);
+                setTimeout("isGameOver()",300);
             }
             break;
         case 40://down
             if( moveDown() ){
-                genrateOneNum();
-                isGameOver();
+                setTimeout("genrateOneNum()",210);
+                setTimeout("isGameOver()",300);
             }
             break;
     }
 });
 function isGameOver(){
-
+    if(nospace( board ) && noMove( board ))
+        gameOver();
+}
+function gameOver(){
+    alert("game over!");
 }
 function moveLeft(){
     if( !canMoveLeft( board ) ){
@@ -136,9 +145,12 @@ function moveLeft(){
                    {
                        //move
                        showMoveAnimation(i,j,i,k);
+                       //adnumber
                        board[i][k] += board[i][j];
                        board[i][j] = 0;
-                       //adnumber
+                       //addscore
+                       score +=board[i][k];
+                       updateScore( score );
                        continue;
                    }
                }
@@ -167,6 +179,9 @@ function moveRight(){
                         showMoveAnimation(i,j,i,k);
                         board[i][k] += board[i][j];
                         board[i][j]=0;
+
+                        score +=board[i][k];
+                        updateScore( score );
                         continue;
                     }
                 }
@@ -194,6 +209,9 @@ function moveUp(){
                         showMoveAnimation(i,j,k,j);
                         board[k][j] += board[i][j];
                         board[i][j]=0;
+
+                        score +=board[k][j];
+                        updateScore( score );
                         continue;
                     }
                 }
@@ -222,6 +240,9 @@ function moveDown(){
                         showMoveAnimation(i,j,k,j);
                         board[k][j] += board[i][j];
                         board[i][j]=0;
+
+                        score +=board[k][j];
+                        updateScore( score );
                         continue;
                     }
                 }

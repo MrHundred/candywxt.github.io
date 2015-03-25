@@ -95,3 +95,11 @@ function noDownBlock(row1,row2,coll,board){
             return false;
     return true;
 }
+function noMove( board ){
+    if( canMoveLeft( board )||
+        canMoveRight( board )||
+        canMoveUp( board )||
+        canMoveDown( board ) )
+        return false;
+    return true;
+}

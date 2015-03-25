@@ -3,6 +3,7 @@
  */
 var board = new Array();
 var score = 0;
+var hasConfilcted = new Array();
 
 $(document).ready(function(){
     newgame();
@@ -14,7 +15,6 @@ function newgame(){
     //随机出两个数字
     genrateOneNum();
     genrateOneNum();
-
     score = 0;
     $("#score").text(score);
 }
@@ -29,8 +29,10 @@ function init() {
     }
     for(var i = 0;i<4;i++){
         board[i] = new Array();
+        hasConfilcted[i] = new Array();
         for(var j = 0;j < 4; j++)
             board[i][j]=0;
+            hasConfilcted[i][j] = false;
     }
     updateBoardView();
 }
@@ -57,6 +59,7 @@ function updateBoardView(){
                 thenumcell.css('color', getColor(board[i][j]));
                 thenumcell.text(board[i][j]);
             }
+            hasConfilcted[i][j] = false;
         }
     }
 }
@@ -96,7 +99,7 @@ $(document).keydown(function (event){
             }
             break;
         case 38://up
-            if( moveUp ){
+            if( moveUp() ){
                 setTimeout("genrateOneNum()",210);
                 setTimeout("isGameOver()",300);
             }
@@ -141,7 +144,7 @@ function moveLeft(){
                        board[i][j] = 0;
                        continue;
                    }
-                   else if(board[i][k] == board[i][j] && noLeftBlock(i,k,j,board ))
+                   else if(board[i][k] == board[i][j] && noLeftBlock(i,k,j,board )&& !hasConfilcted[i][k])
                    {
                        //move
                        showMoveAnimation(i,j,i,k);
@@ -151,6 +154,7 @@ function moveLeft(){
                        //addscore
                        score +=board[i][k];
                        updateScore( score );
+                       hasConfilcted[i][k] = true;
                        continue;
                    }
                }
@@ -174,7 +178,7 @@ function moveRight(){
                         board[i][j] = 0;
                         continue;
                     }
-                    else if(board[i][k] == board[i][j] && noRightBlock(i,j,k,board)){
+                    else if(board[i][k] == board[i][j] && noRightBlock(i,j,k,board) && !hasConfilcted[i][k]){
                         //move
                         showMoveAnimation(i,j,i,k);
                         board[i][k] += board[i][j];
@@ -182,6 +186,7 @@ function moveRight(){
 
                         score +=board[i][k];
                         updateScore( score );
+                        hasConfilcted[i][k] = true;
                         continue;
                     }
                 }
@@ -193,25 +198,28 @@ function moveUp(){
     if( !canMoveUp( board ) ){
         return false;
     }
-    for(var i = 1 ; i < 3 ; i++)
+    for(var i = 1 ; i < 4 ; i++)
         for(var j = 0 ; j < 4 ; j++)
             if(board[i][j] != 0){
                 for(var k = 0 ; k < i ; k++){
                     if(board[k][j] == 0 && noUpBlock(k,i,j,board)){
                         //move
                         showMoveAnimation(i,j,k,j);
+                        console.info(i,j,k,i);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
                         continue;
 
                     }
-                    else if(board[k][j] == board[i][j] && noUpBlock(k,i,j,board)){
+                    else if(board[k][j] == board[i][j] && noUpBlock(k,i,j,board)&& !hasConfilcted[k][j]){
                         showMoveAnimation(i,j,k,j);
+                        console.info(i,j,k,i);
                         board[k][j] += board[i][j];
                         board[i][j]=0;
 
                         score +=board[k][j];
                         updateScore( score );
+                        hasConfilcted[k][j] = true;
                         continue;
                     }
                 }
@@ -231,18 +239,21 @@ function moveDown(){
                     if(board[k][j] == 0 && noDownBlock(i,k,j,board)){
                         //move
                         showMoveAnimation(i,j,k,j);
+                        console.info(i,j,k,i);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
                         continue;
                     }
-                    else if(board[k][j] == board[i][j] && noDownBlock(i,k,j,board)){
+                    else if(board[k][j] == board[i][j] && noDownBlock(i,k,j,board) && !hasConfilcted[k][j]){
                         //move
                         showMoveAnimation(i,j,k,j);
+                        console.info(i,j,k,i);
                         board[k][j] += board[i][j];
                         board[i][j]=0;
 
                         score +=board[k][j];
                         updateScore( score );
+                        hasConfilcted[k][j] = true;
                         continue;
                     }
                 }

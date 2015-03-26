@@ -1,13 +1,14 @@
 header{
     display: block;
-    width: 500px;
+    width: 100%;
     margin: 20px auto;
     text-align: center;
 }
 h1{
-    font-size: 60px;
+    font-size: 40px;
     font-family: Arial;
     font-weight: bold;
+    margin: 10px auto;
 }
 header #newGameButton{
     display: block;

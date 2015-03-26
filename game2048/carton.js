@@ -8,8 +8,8 @@ function showNumAnimation(i,j,num){
     numcell.text(num);
 
     numcell.animate({
-        width:"100px",
-        height:"100px",
+        width:cellSideLength,
+        height:cellSideLength,
         top:getPosTop(i,j),
         let :getPosLeft(i,j)
     },50)

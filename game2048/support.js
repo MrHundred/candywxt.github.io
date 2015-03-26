@@ -1,11 +1,17 @@
 /**
  * Created by Administrator on 2015/3/24.
  */
+documentWidth = window.screen.availWidth;
+
+gridConWidth = 0.92 * documentWidth;
+cellSideLength = 0.18 * documentWidth;
+cellSpace = 0.04 * documentWidth;
+
 function getPosTop(i,j){
-    return 20+i*120;
+    return cellSpace+i*(cellSideLength+cellSpace);
 }
 function getPosLeft(i,j){
-    return 20+j*120;
+    return cellSpace+j*(cellSideLength+cellSpace);
 }
 function getNumColor(number){
     switch(number){

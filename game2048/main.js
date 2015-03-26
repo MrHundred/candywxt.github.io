@@ -175,7 +175,7 @@ document.addEventListener('touchend',function(event){
 
     var deltaX = endx - startx;
     var deltaY = endy - starty;
-    if( Math.abs(deltaX) < 0.3*documentWidth && Math.abs(deltaY) < 0.3*documentWidth){
+    if( Math.abs(deltaX) < 0.3*cellSideLength && Math.abs(deltaY) < 0.3*cellSideLength){
         return;
     }
     if(Math.abs(deltaX) >=  Math.abs(deltaY) ){
